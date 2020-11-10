@@ -21,13 +21,15 @@ public class TestClassA3{
   public static void phase1(){
     Board b = new Board();
 
+    System.out.println("------::: PHASE 1 TESTS :::-----");
+
     ChessPiece c1 = new King("BLACK", b);
     ChessPiece c2 = new Pawn("Pawn", "BLACK", b);
 
     System.out.println(c1.toString());
     System.out.println(c2.toString());
 
-    /*System.out.println("Attempt 1 - Error - No Tiles: ");
+    System.out.println("Attempt 1 - Error - No Tiles: ");
     b.drawBoard();
     b.drawPiece(1,1);
     b.drawPiece(6,6);
@@ -54,7 +56,6 @@ public class TestClassA3{
     b.setPiece(2,2, new Pawn("Pawn5", "BLACK", b));
     b.setPiece(5,5, new Pawn("Pawn6", "WHITE", b));
     b.drawPieces();
-    */
   }
 
   // Should be the board set up with tiles 
