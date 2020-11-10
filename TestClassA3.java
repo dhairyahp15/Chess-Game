@@ -10,9 +10,9 @@ public class TestClassA3{
     // And providing the test class as part of the handin package. 
     
   	phase1();
-  	//tdDraw.show(pauseTime);  // Draw all art and pause for 1 second
-  	//phase2(); // Castle and Pawn Test
-  	//StdDraw.show(pauseTime); // Draw all art and pause for 1 second
+  	StdDraw.show(pauseTime);  // Draw all art and pause for 1 second
+  	phase2(); // Castle and Pawn Test
+  	StdDraw.show(pauseTime); // Draw all art and pause for 1 second
   	//phase3();
 
   }
@@ -26,10 +26,11 @@ public class TestClassA3{
     ChessPiece c1 = new King("BLACK", b);
     ChessPiece c2 = new Pawn("Pawn", "BLACK", b);
 
+    System.out.println("CONSTRUCTOR TEST:");
     System.out.println(c1.toString());
     System.out.println(c2.toString());
 
-    System.out.println("Attempt 1 - Error - No Tiles: ");
+    System.out.println("\nAttempt 1 - Error - No Tiles: ");
     b.drawBoard();
     b.drawPiece(1,1);
     b.drawPiece(6,6);
@@ -60,10 +61,16 @@ public class TestClassA3{
 
   // Should be the board set up with tiles 
   // Test Selected on given tiles. 
-  /*public static void phase2(){
+  public static void phase2(){
     Board b = new Board();
 
-    b.setPiece(5,5, new Pawn("Pawn5", "BLACK", b));
+    System.out.println("-----::: PHASE 2 TESTS :::-----");
+    System.out.println("Testing BoardLoader method: ");
+    BoardLoader.loadBoardState(b, ".\\Boards\\StandardBoard.txt\\");
+    b.drawBoard();
+    b.drawPieces();
+
+    /*b.setPiece(5,5, new Pawn("Pawn5", "BLACK", b));
     b.setPiece(2,2, new Pawn("Pawn6", "WHITE", b));
     b.setPiece(2,5, new Castle("CastleB1", "BLACK", b));
     b.setPiece(5,2, new Castle("CastleW1", "WHITE", b));
@@ -74,9 +81,9 @@ public class TestClassA3{
     b.drawPieces();
 
     b.drawSelectedForSingleMove(2,5,7,5);
-    b.drawSelectedForSingleMove(2,5,2,7);
+    b.drawSelectedForSingleMove(2,5,2,7);*/
   }
-
+/*
   // Should be the board set up with tiles 
   // Test Selected on given tiles. 
   public static void phase3(){
