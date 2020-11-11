@@ -25,7 +25,7 @@ public class King extends ChessPiece
             }
             else if(b.hasPiece(futureRow, futureCol))
             {
-                if((b.getPieceColor(currentRow, currentCol).equals(b.getPieceColor(futureRow, futureCol))))
+                if(!(b.getPieceColor(currentRow, currentCol).equals(b.getPieceColor(futureRow, futureCol))))
                 {
                     isValid = true;
                 }
