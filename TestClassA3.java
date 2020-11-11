@@ -13,7 +13,8 @@ public class TestClassA3{
   	StdDraw.show(pauseTime);  // Draw all art and pause for 1 second
   	phase2(); // Castle and Pawn Test
   	StdDraw.show(pauseTime); // Draw all art and pause for 1 second
-  	//phase3();
+    phase3();
+    StdDraw.show(pauseTime); // Draw all art and pause for 1 second
 
   }
 
@@ -66,7 +67,7 @@ public class TestClassA3{
 
     System.out.println("-----::: PHASE 2 TESTS :::-----");
     System.out.println("Testing BoardLoader method: ");
-    BoardLoader.loadBoardState(b, ".\\Boards\\StandardBoard.txt\\");
+    BoardLoader.loadBoardState(b, "StandardBoard.txt");
     b.drawBoard();
     b.drawPieces();
 
@@ -83,13 +84,24 @@ public class TestClassA3{
     b.drawSelectedForSingleMove(2,5,7,5);
     b.drawSelectedForSingleMove(2,5,2,7);*/
   }
-/*
+
   // Should be the board set up with tiles 
   // Test Selected on given tiles. 
   public static void phase3(){
     Board b = new Board();
 
-    b.setPiece(5,5, new Pawn("Pawn5", "BLACK", b));
+    System.out.println("-----::: PHASE 3 TESTS :::-----");
+    System.out.println("\nTesting KING Piece:");
+    b.setPiece(5, 5, new King("KingB", "BLACK", b));
+    b.setPiece(0, 0, new King("KingW", "WHITE", b));
+    b.drawBoard();
+    b.drawPieces();
+    b.drawSelectedForAllValidMoves(5, 5);
+    b.drawSelectedForAllValidMoves(0, 0);
+
+    StdDraw.show(pauseTime);
+
+    /*b.setPiece(5,5, new Pawn("Pawn5", "BLACK", b));
     b.setPiece(2,2, new Pawn("Pawn6", "WHITE", b));
     b.drawBoard();
     b.drawPieces();
@@ -101,6 +113,7 @@ public class TestClassA3{
     // Clear selection
     b.drawBoard();
     b.drawPieces();
+*/
+  }
 
-  }*/
-}
+} 

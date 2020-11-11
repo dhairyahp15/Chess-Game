@@ -5,9 +5,10 @@ import java.util.Scanner;
 
 public class BoardLoader 
 {
+    public static String boardFolder = ".\\Boards\\";
     public static void loadBoardState(Board theBoard, String fileName)
     {
-        loadPiecesFromString(theBoard, parseFile(fileName));
+		loadPiecesFromString(theBoard, parseFile(boardFolder + fileName));
     }
 
     private static String[][] parseFile(String fileName)
