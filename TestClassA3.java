@@ -13,7 +13,9 @@ public class TestClassA3{
   	StdDraw.show(pauseTime);  // Draw all art and pause for 1 second
   	phase2(); // Castle and Pawn Test
   	StdDraw.show(pauseTime); // Draw all art and pause for 1 second
-    phase3_King();
+    phase3_king();
+    StdDraw.show(pauseTime); // Draw all art and pause for 1 second
+    phase3_pawn();
     StdDraw.show(pauseTime); // Draw all art and pause for 1 second
 
   }
@@ -87,7 +89,7 @@ public class TestClassA3{
 
   // Should be the board set up with tiles 
   // Test Selected on given tiles. 
-  public static void phase3_King(){
+  public static void phase3_king(){
     Board b = new Board();
 
     System.out.println("-----::: PHASE 3 TESTS :::-----");
@@ -114,6 +116,22 @@ public class TestClassA3{
     b.drawBoard();
     b.drawPieces();
 */
+  }
+
+  public static void phase3_pawn()
+  {
+    Board b = new Board();
+
+    System.out.println("\nTesting PAWN Piece:");
+    b.setPiece(6, 7, new Pawn("PawnB", "BLACK", b));
+    b.setPiece(1, 1, new Pawn("PawnW", "WHITE", b));
+    b.setPiece(5, 6, new Pawn("Pawn1", "BLACK", b));
+    b.setPiece(6, 6, new Bishop("Pawn1", "WHITE", b));
+    b.setPiece(2, 2, new Pawn("Pawn1", "BLACK", b));
+    b.drawBoard();
+    b.drawPieces();
+    b.drawSelectedForAllValidMoves(6, 7);
+    b.drawSelectedForAllValidMoves(1, 1);
   }
 
 } 
