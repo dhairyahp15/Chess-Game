@@ -9,7 +9,7 @@ public class TestClassA3{
     // This is all just provided as an example, you should be testing your own code yourself. 
     // And providing the test class as part of the handin package. 
     
-  	phase1();
+  	/*phase1();
   	StdDraw.show(pauseTime);  // Draw all art and pause for 1 second
   	phase2(); // Castle and Pawn Test
   	StdDraw.show(pauseTime); // Draw all art and pause for 1 second
@@ -17,7 +17,9 @@ public class TestClassA3{
     StdDraw.show(pauseTime); // Draw all art and pause for 1 second
     phase3_pawn();
     StdDraw.show(pauseTime); // Draw all art and pause for 1 second
-
+    */
+    phase3_knight();
+    StdDraw.show(pauseTime); // Draw all art and pause for 1 second
   }
 
   // Should be a board with one red and one black tile in the corners (see images. )
@@ -132,6 +134,20 @@ public class TestClassA3{
     b.drawPieces();
     b.drawSelectedForAllValidMoves(6, 7);
     b.drawSelectedForAllValidMoves(1, 1);
+  }
+
+  public static void phase3_knight()
+  {
+    Board b = new Board();
+
+    System.out.println("\nTesting KNIGHT Piece:");
+    b.setPiece(4, 5, new Knight("PawnB", "BLACK", b));
+    b.setPiece(0, 1, new Knight("PawnW", "WHITE", b));
+    b.setPiece(6, 6, new Bishop("Pawn1", "WHITE", b));
+    b.drawBoard();
+    b.drawPieces();
+    b.drawSelectedForAllValidMoves(4, 5);
+    b.drawSelectedForAllValidMoves(0, 1);
   }
 
 } 
