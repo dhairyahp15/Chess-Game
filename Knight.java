@@ -24,13 +24,10 @@ public class Knight extends ChessPiece
                 if((rResult + cResult) % 2 != 0  && (futureRow != currentRow && futureCol != currentCol))
                     isValid = true;
             }
-            else
+            else if(!(b.getPieceColor(currentRow, currentCol).equals(b.getPieceColor(futureRow, futureCol))))
             {
-                if(!(b.getPieceColor(currentRow, currentCol).equals(b.getPieceColor(futureRow, futureCol))))
-                {
-                    if((rResult + cResult) % 2 != 0  && (futureRow != currentRow && futureCol != currentCol))
-                        isValid = true;
-                }
+                if((rResult + cResult) % 2 != 0  && (futureRow != currentRow && futureCol != currentCol))
+                    isValid = true;
             }
         }
         return isValid;

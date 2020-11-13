@@ -16,112 +16,103 @@ public class Castle extends ChessPiece
     public boolean isValidMove( int currentRow, int currentCol, int futureRow, int futureCol)
     {
         boolean isValid = false;
-        boolean likePiece = false;
+        boolean gotPiece = false;
         Board b = super.getBoard();
         int rResult = futureRow - currentRow, cResult = futureCol - currentCol;
-        
-        if((rResult >= -7 && rResult <= 7) && (cResult >= -7 && rResult <= 7))
+
+        if(currentRow == futureRow)
         {
-            if(currentRow == futureRow)
+            if(cResult > 0)
             {
-                if(cResult > 0)
+                for(int i = currentCol + 1; i <= futureCol; i++)
                 {
-                    for(int i = currentCol + 1; i <= futureCol; i++)
+                    if(!gotPiece)
                     {
-                        if(!likePiece)
+                        if(!(b.hasPiece(currentRow, i)))
+                            isValid = true;
+                        else if(!(b.getPieceColor(currentRow, i)).equals(b.getPieceColor(currentRow, currentCol)))
                         {
-                            if(!(b.hasPiece(currentRow, i)))
-                                isValid = true;
-                            else if(!(b.getPieceColor(currentRow, i)).equals(b.getPieceColor(currentRow, currentCol)))
-                            {
-                                isValid = true;
-                                likePiece = true;
-                            }
-                            else
-                            {
-                                isValid = false;
-                                break;
-                            }
+                            isValid = true;
+                            gotPiece = true;
                         }
                         else
+                        {
                             isValid = false;
-                    }
-                }
-                if(cResult < 0)
-                {
-                    for(int i = currentCol - 1; i >= futureCol; i--)
-                    {
-                        if(!likePiece)
-                        {
-                            System.out.println(i);
-                            if(!(b.hasPiece(currentRow, i)))
-                                isValid = true;
-                            else if(!(b.getPieceColor(currentRow, i)).equals(b.getPieceColor(currentRow, currentCol)))
-                            {
-                                isValid = true;
-                                likePiece = true;
-                            }
-                            else
-                            {
-                                isValid = false;
-                                break;
-                            }
-                        }
-                        else
-                        {
-                           isValid = false;
-                            break;
+                            gotPiece = true;
                         }
                     }
+                    else
+                        isValid = false;
                 }
             }
-            else if(currentCol == futureCol)
+            if(cResult < 0)
             {
-                if(rResult > 0)
+                for(int i = currentCol - 1; i >= futureCol; i--)
                 {
-                    for(int i = currentRow + 1; i <= futureRow; i++)
+                    if(!gotPiece)
                     {
-                        if(!likePiece)
+                        if(!(b.hasPiece(currentRow, i)))
+                            isValid = true;
+                        else if(!(b.getPieceColor(currentRow, i)).equals(b.getPieceColor(currentRow, currentCol)))
                         {
-                            if(!(b.hasPiece(i, currentCol)))
-                                isValid = true;
-                            else if(!(b.getPieceColor(i, currentCol)).equals(b.getPieceColor(currentRow, currentCol)))
-                            {
-                                isValid = true;
-                                likePiece = true;
-                            }
-                            else
-                            {
-                                isValid = false;
-                                break;
-                            }
+                            isValid = true;
+                            gotPiece = true;
                         }
                         else
+                        {
                             isValid = false;
+                            gotPiece = true;
+                        }
                     }
+                    else
+                       isValid = false;
                 }
-                if(rResult < 0)
+            }
+        }
+        else if(currentCol == futureCol)
+        {
+            if(rResult > 0)
+            {
+                for(int i = currentRow + 1; i <= futureRow; i++)
                 {
-                    for(int i = currentRow -1; i >= futureRow; i--)
+                    if(!gotPiece)
                     {
-                        if(!likePiece)
+                        if(!(b.hasPiece(i, currentCol)))
+                            isValid = true;
+                        else if(!(b.getPieceColor(i, currentCol)).equals(b.getPieceColor(currentRow, currentCol)))
                         {
-                            if(!(b.hasPiece(i, currentCol)))
-                                isValid = true;
-                            else if(!(b.getPieceColor(i, currentCol)).equals(b.getPieceColor(currentRow, currentCol)))
-                            {
-                                isValid = true;
-                                likePiece = true;
-                            }
-                            else
-                            {
-                                isValid = false;
-                                break;
-                            }
-                        }
+                            isValid = true;
+                            gotPiece = true;                        }
                         else
+                        {
                             isValid = false;
+                            gotPiece = true;
+                        }
                     }
+                    else
+                        isValid = false;
+                }
+            }
+            if(rResult < 0)
+            {
+                for(int i = currentRow - 1; i >= futureRow; i--)
+                {
+                    if(!gotPiece)
+                    {
+                        if(!(b.hasPiece(i, currentCol)))
+                            isValid = true;
+                        else if(!(b.getPieceColor(i, currentCol)).equals(b.getPieceColor(currentRow, currentCol)))
+                        {
+                            isValid = true;
+                            gotPiece = true;                        }
+                        else
+                        {
+                            isValid = false;
+                            gotPiece = true;
+                        }
+                    }
+                    else
+                        isValid = false;
                 }
             }
         }

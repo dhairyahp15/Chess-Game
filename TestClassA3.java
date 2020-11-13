@@ -19,8 +19,10 @@ public class TestClassA3{
     StdDraw.show(pauseTime); // Draw all art and pause for 1 second
     phase3_knight();
     StdDraw.show(pauseTime); // Draw all art and pause for 1 second
-    */
     phase3_castle();
+    StdDraw.show(pauseTime); // Draw all art and pause for 1 second
+    */
+    phase3_bishop();
     StdDraw.show(pauseTime); // Draw all art and pause for 1 second
   }
 
@@ -156,7 +158,7 @@ public class TestClassA3{
   {
     Board b = new Board();
 
-    System.out.println("\nTesting KNIGHT Piece:");
+    System.out.println("\nTesting CASTLE Piece:");
     b.setPiece(4, 5, new Castle("CastleW", "WHITE", b));
     b.setPiece(6, 3, new Bishop("BishopB", "BLACK", b));
     b.setPiece(4, 1, new Pawn("PawnW", "BLACK", b));
@@ -165,6 +167,20 @@ public class TestClassA3{
     b.drawBoard();
     b.drawPieces();
     b.drawSelectedForAllValidMoves(4, 3);
+  }
+
+  public static void phase3_bishop()
+  {
+    Board b = new Board();
+    
+    System.out.println("\nTesting BISHOP Piece:");
+    b.setPiece(2, 4, new Bishop("BishopB", "BLACK", b));
+    b.setPiece(4, 6, new Pawn("PawnB", "BLACK", b));
+    b.setPiece(3, 3, new Pawn("PawnB", "WHITE", b));
+    b.setPiece(1, 1, new Knight("PawnB", "BLACK", b));
+    b.drawBoard();
+    b.drawPieces();
+    b.drawSelectedForAllValidMoves(2, 4);
   }
 
 } 
