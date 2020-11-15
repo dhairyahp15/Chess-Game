@@ -21,8 +21,9 @@ public class TestClassA3{
     StdDraw.show(pauseTime); // Draw all art and pause for 1 second
     phase3_castle();
     StdDraw.show(pauseTime); // Draw all art and pause for 1 second
-    */
     phase3_bishop();
+    StdDraw.show(pauseTime); // Draw all art and pause for 1 second*/
+    phase3_queen();
     StdDraw.show(pauseTime); // Draw all art and pause for 1 second
   }
 
@@ -79,7 +80,9 @@ public class TestClassA3{
     b.drawBoard();
     b.drawPieces();
 
-    /*b.setPiece(5,5, new Pawn("Pawn5", "BLACK", b));
+    StdDraw.show(pauseTime);  // Draw all art and pause for 1 second
+
+    b.setPiece(5,5, new Pawn("Pawn5", "BLACK", b));
     b.setPiece(2,2, new Pawn("Pawn6", "WHITE", b));
     b.setPiece(2,5, new Castle("CastleB1", "BLACK", b));
     b.setPiece(5,2, new Castle("CastleW1", "WHITE", b));
@@ -90,11 +93,30 @@ public class TestClassA3{
     b.drawPieces();
 
     b.drawSelectedForSingleMove(2,5,7,5);
-    b.drawSelectedForSingleMove(2,5,2,7);*/
+    b.drawSelectedForSingleMove(2,5,2,7);
+
+    StdDraw.show(pauseTime);  // Draw all art and pause for 1 second
   }
 
   // Should be the board set up with tiles 
   // Test Selected on given tiles. 
+
+  public static void phase3()
+  {
+    Board b = new Board();
+    b.setPiece(5,5, new Pawn("Pawn5", "BLACK", b));
+    b.setPiece(2,2, new Pawn("Pawn6", "WHITE", b));
+    b.drawBoard();
+    b.drawPieces();
+
+    b.drawSelectedForAllValidMoves(2,2);
+    StdDraw.show(pauseTime);  // Draw all art and pause for 1 second
+    b.drawSelectedForAllValidMoves(5,5);
+    StdDraw.show(pauseTime);  // Draw all art and pause for 1 second
+    // Clear selection
+    b.drawBoard();
+    b.drawPieces();
+  }
   public static void phase3_king(){
     Board b = new Board();
 
@@ -108,20 +130,6 @@ public class TestClassA3{
     b.drawPieces();
     b.drawSelectedForAllValidMoves(5, 5);
     b.drawSelectedForAllValidMoves(0, 0);
-
-    /*b.setPiece(5,5, new Pawn("Pawn5", "BLACK", b));
-    b.setPiece(2,2, new Pawn("Pawn6", "WHITE", b));
-    b.drawBoard();
-    b.drawPieces();
-
-    b.drawSelectedForAllValidMoves(2,2);
-    StdDraw.show(pauseTime);  // Draw all art and pause for 1 second
-    b.drawSelectedForAllValidMoves(5,5);
-    StdDraw.show(pauseTime);  // Draw all art and pause for 1 second
-    // Clear selection
-    b.drawBoard();
-    b.drawPieces();
-*/
   }
 
   public static void phase3_pawn()
@@ -178,6 +186,22 @@ public class TestClassA3{
     b.setPiece(4, 6, new Pawn("PawnB", "BLACK", b));
     b.setPiece(3, 3, new Pawn("PawnB", "WHITE", b));
     b.setPiece(1, 1, new Knight("PawnB", "BLACK", b));
+    b.drawBoard();
+    b.drawPieces();
+    b.drawSelectedForAllValidMoves(2, 4);
+  }
+
+  public static void phase3_queen()
+  {
+    Board b = new Board();
+    
+    System.out.println("\nTesting QUEEN Piece:");
+    b.setPiece(2, 4, new Queen("QueenB", "BLACK", b));
+    b.setPiece(5, 4, new Queen("QueenW", "WHITE", b));
+    b.setPiece(2, 1, new Pawn("PawnW", "WHITE", b));
+    b.setPiece(2, 7, new Pawn("PawnB", "BLACK", b));
+    b.setPiece(6, 0, new Pawn("PawnW", "BLACK", b));
+    b.setPiece(0, 2, new Knight("KnightB", "BLACK", b));
     b.drawBoard();
     b.drawPieces();
     b.drawSelectedForAllValidMoves(2, 4);
