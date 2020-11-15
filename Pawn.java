@@ -20,6 +20,8 @@ public class Pawn extends ChessPiece
         String color = b.getPieceColor(currentRow, currentCol);
         if(color.equals("WHITE"))
         {
+            if(currentRow == 1 && (rResult == 2 && cResult == 0))
+                isValid = true;
             if(rResult == 1 && (cResult <= 1 && cResult >= -1))
             {
                 if(!(b.hasPiece(futureRow, futureCol)))
@@ -36,6 +38,8 @@ public class Pawn extends ChessPiece
         }
         else
         {
+            if(currentRow == 6 && (rResult == -2 && cResult == 0))
+                isValid = true;
             if(rResult == -1 && (cResult <= 1 && cResult >= -1))
             {
                 if(!(b.hasPiece(futureRow, futureCol)))

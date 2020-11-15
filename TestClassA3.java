@@ -9,7 +9,7 @@ public class TestClassA3{
     // This is all just provided as an example, you should be testing your own code yourself. 
     // And providing the test class as part of the handin package. 
     
-  	/*phase1();
+  	phase1();
   	StdDraw.show(pauseTime);  // Draw all art and pause for 1 second
   	phase2(); // Castle and Pawn Test
   	StdDraw.show(pauseTime); // Draw all art and pause for 1 second
@@ -17,14 +17,14 @@ public class TestClassA3{
     StdDraw.show(pauseTime); // Draw all art and pause for 1 second
     phase3_pawn();
     StdDraw.show(pauseTime); // Draw all art and pause for 1 second
-    phase3_knight();
+    /*phase3_knight();
     StdDraw.show(pauseTime); // Draw all art and pause for 1 second
     phase3_castle();
     StdDraw.show(pauseTime); // Draw all art and pause for 1 second
     phase3_bishop();
-    StdDraw.show(pauseTime); // Draw all art and pause for 1 second*/
-    phase3_queen();
     StdDraw.show(pauseTime); // Draw all art and pause for 1 second
+    phase3_queen();
+    StdDraw.show(pauseTime); // Draw all art and pause for 1 second*/
   }
 
   // Should be a board with one red and one black tile in the corners (see images. )
