@@ -22,7 +22,7 @@ public class Queen extends ChessPiece
     }
 
     /*This method is from the parent class, which is overrided for detecting the valid
-    move for the Bishop, i.e. what possible moves can a Bishop have from current positon.*/
+    move for the Queen, i.e. what possible moves can a Queen have from current positon.*/
     public boolean isValidMove(int currentRow, int currentCol, int futureRow, int futureCol)
     {
         // The boolean variable, which is to be returned.

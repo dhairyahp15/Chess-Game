@@ -1,12 +1,14 @@
-------------------------------------------------------------------------
-This is the project README file. Here, you should describe your project.
-Tell the reader (someone who does not know anything about this project)
-all he/she needs to know. The comments should usually include at least:
-------------------------------------------------------------------------
+PROJECT TITLE: Chess
 
-PROJECT TITLE:
-PURPOSE OF PROJECT:
-VERSION or DATE:
-HOW TO START THIS PROJECT:
-AUTHORS:
-USER INSTRUCTIONS:
+PURPOSE OF PROJECT: Basic version of chess.
+
+AUTHOR: DHAIRYA PRAJAPATI
+
+USER INSTRUCTIONS: The GameController.java contains all the logic and interface for the game. To play 
+the Chess you can simply run the GameController.java file.
+
+This game uses the StdDraw library from Java to display the graphics of the game.
+You can play this game using mouse as two players, it shows green tiles for all the possible moves for
+different pieces.
+
+Note: This game does not support the situation where king is in the position of check.

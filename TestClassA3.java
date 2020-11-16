@@ -149,6 +149,7 @@ public class TestClassA3{
     // Setting pieces arbitrarily and testing valid moves for Pawn.
     b.setPiece(6, 7, new Pawn("PawnB", "BLACK", b));
     b.setPiece(1, 1, new Pawn("PawnW", "WHITE", b));
+    b.setPiece(2, 1, new Pawn("PawnW", "WHITE", b));
     b.setPiece(5, 6, new Pawn("Pawn1", "BLACK", b));
     b.setPiece(6, 6, new Bishop("Bishop", "WHITE", b));
     b.setPiece(2, 2, new Pawn("Pawn1", "BLACK", b));

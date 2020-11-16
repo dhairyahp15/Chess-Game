@@ -45,8 +45,11 @@ public class Pawn extends ChessPiece
         {
             /*<><>><> This is for the bonus, that the pawn can take two steps initially. <><><>*/
             if(currentRow == 1 && (rResult == 2 && cResult == 0))
+            {
+                if(!(b.hasPiece(currentRow + 1, currentCol)))
                 isValid = true;
-            if(rResult == 1 && (cResult <= 1 && cResult >= -1))
+            }
+                if(rResult == 1 && (cResult <= 1 && cResult >= -1))
             {
                 if(!(b.hasPiece(futureRow, futureCol)))
                 {      
@@ -67,7 +70,10 @@ public class Pawn extends ChessPiece
         {
             /*<><>><> This is for the bonus, that the pawn can take two steps initially. <><><>*/
             if(currentRow == 6 && (rResult == -2 && cResult == 0))
+            {
+                if(!(b.hasPiece(currentRow - 1, currentCol)))
                 isValid = true;
+            }
             if(rResult == -1 && (cResult <= 1 && cResult >= -1))
             {
                 if(!(b.hasPiece(futureRow, futureCol)))

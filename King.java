@@ -5,8 +5,8 @@ public class King extends ChessPiece
 {
     /*This constructor calls the parent class constructor and assigns the
     color, board reference (passed as parameters) and respective graphics 
-    (in this case, black and white png file for Queen). And it sets the 
-    default name to the type of piece, (in this case, Queen).*/
+    (in this case, black and white png file for King). And it sets the 
+    default name to the type of piece, (in this case, King).*/
     public King(String newColor, Board theBoard)
     {
         super("King", newColor, theBoard);
@@ -22,7 +22,7 @@ public class King extends ChessPiece
     }
 
     /*This method is from the parent class, which is overrided for detecting the valid
-    move for the Bishop, i.e. what possible moves can a Bishop have from current positon.*/
+    move for the King, i.e. what possible moves can a King have from current positon.*/
     public boolean isValidMove( int currentRow, int currentCol, int futureRow, int futureCol )
     {
         // The boolean variable, which is to be returned.
