@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 // This is the parent class for all ChessPieces. 
 public abstract class ChessPiece{
 
